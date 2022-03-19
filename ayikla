@@ -1,0 +1,10 @@
+#!/bin/bash
+
+my_var=`assetfinder --subs-only $1 | httpx --silent --timeout 3 `
+
+if [ -z "$my_var" ]
+then
+      echo "https://$1"
+else
+      echo "$my_var"
+fi
